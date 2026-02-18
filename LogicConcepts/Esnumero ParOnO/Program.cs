@@ -1,31 +1,35 @@
 ﻿
-var numberString = string.Empty;
+using Share;
+
+var answer = string.Empty;
+var options = new List<string>() { "si", "no" };
 
 do
 {
-    Console.WriteLine("Ingrese un número o la plabra Salir para salir: ");
-    numberString = Console.ReadLine();
-    if (numberString!.ToLower() == "salir")
+
+    var number = ConsoleExtentions.GetIntFromConsole(" Ingrese el numero Entero diferente de cero. ");   
+
+    if (number == 0) 
     {
         continue;
     }
 
-
-    var numberInt = 0;
-    if (int.TryParse(numberString, out numberInt))
-    {
-        if (numberInt % 2 == 0)
+        if (number  % 2 == 0)
         {
-            Console.WriteLine("El numero es par. ");
+            Console.WriteLine($"El numero {number}, es par. ");
         }
         else
         {
-            Console.WriteLine("El numero es impar. ");
+            Console.WriteLine($"El numero {number}, es impar. ");
         }
-    }
-    else
-    {
-        Console.WriteLine("El valor ingresado, no es un número válido. Intente nuevamente.");
-    }
-} while (numberString!.ToLower() != "salir");
+
+        do 
+        {
+            answer = ConsoleExtentions.GetValidOptions("¿Desea ingresar otro numero? (si/no) ", options);
+        } while (!options.Any(X => X.Equals(answer, StringComparison.CurrentCultureIgnoreCase)));
+
+} while (answer!.Equals("si", StringComparison.CurrentCultureIgnoreCase));
+
 Console.WriteLine("Game Over. ");
+
+

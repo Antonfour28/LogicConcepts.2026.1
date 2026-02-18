@@ -1,5 +1,11 @@
 <Solution>
-  <Folder Name="/002/">
+  <Folder Name="/001/">
     <Project Path="Esnumero ParOnO/Esnumero ParOnO.csproj" />
+  </Folder>
+  <Folder Name="/002/">
+    <Project Path="TheGraterNumber/TheGraterNumber.csproj" Id="53bff831-5179-40e0-933d-c1fa737ce574" />
+  </Folder>
+  <Folder Name="/Share/">
+    <Project Path="Share/Share.csproj" Id="bb6f4367-7a8c-4322-942e-b815f2b9ec84" />
   </Folder>
 </Solution>
